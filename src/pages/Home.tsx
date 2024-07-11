@@ -18,7 +18,7 @@ export const Home = () => {
     arrows: false, // Mostrar flechas de navegación
     className: "w-11/12 h-auto ",
   };
-  
+
   return (
     <>
       <section className="gap-5 items-center justify-around min-h-screen lg:min-h-[90vh] w-full flex">
@@ -34,8 +34,13 @@ export const Home = () => {
         </Drop>
         <Drop className="w-[33%] flex items-center max-md:hidden ">
           <Slider {...sliderSettings}>
-            {proyects.map((item) => (
-              <ItemProyects key={item.id} {...item} />
+            {proyects.map(({ img }) => (
+              // <div className="w-full bg-1 flex flex-col   overflow-hidden">
+              <div className="max-h-[300px] w-auto relative rounded-lg text-black hover:text-blue-600 ">
+                <img className="w-full h-full object-cover " src={img} alt="" />
+              </div>
+
+              // </div>
             ))}
           </Slider>
         </Drop>
